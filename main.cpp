@@ -42,11 +42,6 @@ IplImage *img1, *img2;
 IplImage *img1_Save, *img2_Save;
 IplImage *Original_img1, *Original_img2;
 
-/*
-VideoCapture capture(0);
-VideoWriter writer("VideoTest.avi", CV_FOURCC('M', 'J', 'P', 'G'), 25.0, Size(640, 480));
-*/
-
 // Feature Line Color
 Vec3f Color(0, 255, 255);
 
@@ -154,13 +149,13 @@ void onMouse1 (int Event, int x, int y, int flags, void* param)
 
     if (Drawing_Flag % 2 == 0 && Drawing_Flag > 0) {
         if (Event == CV_EVENT_LBUTTONDOWN) {
-            printf("Left Line Start Point¡G( %d, %d) \n", x, y);
+            printf("Left Line Start Pointï¼š( %d, %d) \n", x, y);
 
             Two_lines.Left_Line.Begin.x = x;
             Two_lines.Left_Line.Begin.y = y;
         }
         if (Event == CV_EVENT_LBUTTONUP) {
-            printf("Left Line End Point¡G( %d, %d) \n", x, y);
+            printf("Left Line End Pointï¼š( %d, %d) \n", x, y);
 
             Two_lines.Left_Line.End.x = x;
             Two_lines.Left_Line.End.y = y;
@@ -188,13 +183,13 @@ void onMouse2 (int Event, int x, int y, int flags, void* param)
 {
     if (Drawing_Flag % 2 == 1 && Drawing_Flag > 0) {
         if (Event == CV_EVENT_LBUTTONDOWN) {
-            printf("Right Line Start Point¡G( %d, %d) \n", x, y);
+            printf("Right Line Start Pointï¼š( %d, %d) \n", x, y);
 
             Two_lines.Right_Line.Begin.x = x;
             Two_lines.Right_Line.Begin.y = y;
         }
         if (Event == CV_EVENT_LBUTTONUP) {
-            printf("Right Line End Point¡G( %d, %d) \n", x, y);
+            printf("Right Line End Pointï¼š( %d, %d) \n", x, y);
 
             Two_lines.Right_Line.End.x = x;
             Two_lines.Right_Line.End.y = y;
@@ -393,11 +388,7 @@ void Warping()
         }
 
         Mat Result = cvarrToMat(Morphing_Result);
-        /*
-        capture >> Result;
-        writer << Result;
-        imshow("video", Result);
-        */
+
         if (j < 10) {
             imwrite("Morphing_000" + Integer_To_String(j) + ".png", Result);
         }
@@ -409,49 +400,49 @@ void Warping()
 
 int main() {
    
-    cout << "Choose First image (Input an odd integer number between 1 to 14)¡G";
+    cout << "Choose First image (Input an odd integer number between 1 to 14)ï¼š";
     cin >> First;
     while (First % 2 == 0 || First < 1 || First > 14) {
-        cout << "Hey¡I What are you doing¡H Please follow the instruction. :(\n";
-        cout << "Choose First image (Input an odd integer number between 1 to 14)¡G";
+        cout << "Heyï¼ What are you doingï¼Ÿ Please follow the instruction. :(\n";
+        cout << "Choose First image (Input an odd integer number between 1 to 14)ï¼š";
         cin >> First;
     }
 
-    cout << "Choose Second image (Input an even integer number which is the number of first image + 1)¡G";
+    cout << "Choose Second image (Input an even integer number which is the number of first image + 1)ï¼š";
     cin >> Second;
     while (Second != First + 1) {
-        cout << "Hey¡I What are you doing¡H Please follow the instruction. :(\n";
-        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)¡G";
+        cout << "Heyï¼ What are you doingï¼Ÿ Please follow the instruction. :(\n";
+        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)ï¼š";
         cin >> Second;
     }
 
-    cout << "Input Frames (Input an integer number greater than 0)¡G";
+    cout << "Input Frames (Input an integer number greater than 0)ï¼š";
     cin >> frames;
     while (frames <= 0) {
-        cout << "Hey¡I What are you doing¡H Please follow the instruction. :(\n";
-        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)¡G";
+        cout << "Heyï¼ What are you doingï¼Ÿ Please follow the instruction. :(\n";
+        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)ï¼š";
         cin >> frames;
     }
     /*
-    cout << "Choose constant a (Input an integer number between 0 to 2)¡G";
+    cout << "Choose constant a (Input an integer number between 0 to 2)ï¼š";
     cin >> a;
     while (a < 0 || a > 2) {
-        cout << "Hey¡I What are you doing¡H Please follow the instruction. :(\n";
-        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)¡G";
+        cout << "Heyï¼ What are you doingï¼Ÿ Please follow the instruction. :(\n";
+        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)ï¼š";
         cin >> a;
     }
-    cout << "Choose constant b (Input an integer number between 0 to 2)¡G";
+    cout << "Choose constant b (Input an integer number between 0 to 2)ï¼š";
     cin >> b;
     while (b < 0 || b > 2) {
-        cout << "Hey¡I What are you doing¡H Please follow the instruction. :(\n";
-        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)¡G";
+        cout << "Heyï¼ What are you doingï¼Ÿ Please follow the instruction. :(\n";
+        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)ï¼š";
         cin >> b;
     }
-    cout << "Choose constant p (Input an integer number between 0 to 2)¡G";
+    cout << "Choose constant p (Input an integer number between 0 to 2)ï¼š";
     cin >> p;
     while (p < 0 || p > 2) {
-        cout << "Hey¡I What are you doing¡H Please follow the instruction. :(\n";
-        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)¡G";
+        cout << "Heyï¼ What are you doingï¼Ÿ Please follow the instruction. :(\n";
+        cout << "Choose Second image (Input an even integer number which is the number of first image + 1)ï¼š";
         cin >> p;
     }
     */
